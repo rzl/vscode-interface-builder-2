@@ -1,9 +1,9 @@
 {
-	"name": "interface-builder",
-	"displayName": "Interface builder for Typescript",
-	"description": "Defines interface of object",
-	"version": "0.0.5",
-	"publisher": "VladimirSharavanov",
+	"name": "interface-builder-2",
+	"displayName": "Interface builder 2 for Typescript",
+	"description": "Defines interface of object, Defines interface of export function",
+	"version": "0.0.7",
+	"publisher": "rzl",
 	"icon": "images/logo.png",
 	"engines": {
 		"vscode": "^1.59.0"
@@ -17,13 +17,14 @@
 		"interface",
 		"typescript"
 	],
-	"homepage": "https://github.com/VladimirSharavanov/vscode-interface-builder/blob/master/README.md",
+	"homepage": "https://github.com/rzl/vscode-interface-builder-2",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/VladimirSharavanov/vscode-interface-builder"
+		"url": "https://github.com/rzl/vscode-interface-builder-2"
 	},
 	"activationEvents": [
-		"onCommand:interface-builder.getInterface"
+		"onCommand:interface-builder.getInterface",
+		"onCommand:interface-builder.getExportInterface"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -31,6 +32,10 @@
 			{
 				"command": "interface-builder.getInterface",
 				"title": "Create interface"
+			},
+			{
+				"command": "interface-builder.getExportInterface",
+				"title": "Create export interface"
 			}
 		],
 		"keybindings": [
@@ -38,6 +43,11 @@
 				"command": "interface-builder.getInterface",
 				"key": "ctrl+alt+i",
 				"mac": "cmd+alt+i"
+			},
+			{
+				"command": "interface-builder.getExportInterface",
+				"key": "ctrl+alt+e",
+				"mac": "cmd+alt+e"
 			}
 		]
 	},
