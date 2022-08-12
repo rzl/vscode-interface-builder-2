@@ -13,7 +13,8 @@ export function activate(context: vscode.ExtensionContext) {
 			const activeTextEditor = vscode.window.activeTextEditor;
 			if (activeTextEditor) {
 				const textFile = activeTextEditor.document.getText(activeTextEditor.selection);
-				const location = activeTextEditor.document.positionAt(0);
+				//const location = activeTextEditor.document.positionAt(0);
+				const location = activeTextEditor.selection.active
 
 				vscode.window.activeTextEditor?.edit((editBuilder) => {
 					try {

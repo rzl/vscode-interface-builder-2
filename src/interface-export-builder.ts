@@ -28,7 +28,7 @@ export function interfaceExportBuilder(text: string, name: string):string {
 
         });
         return `
-interface ${name} {
+export interface ${name} {
     ${str.join('\n    ')}
 }
 `
