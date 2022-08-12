@@ -6,10 +6,20 @@ export class Parser {
 
   public deconstructToFlatModel(model: string): FlatModel[] {
     let deconstructModel: Model;
-    deconstructModel = { interfaceBuilder: this.stringModelToObjectModel(model) };
-    this.deconstruct(deconstructModel, 'interfaceBuilder');
+    let name = this.testInterfaceName(model)
+    deconstructModel = { [name]: this.stringModelToObjectModel(model) };
+    this.deconstruct(deconstructModel, name);
 
     return this.flatModelList;
+  }
+  private testInterfaceName(model: string):string {
+    let name = model.substring(0,model.indexOf('{')).replace(/(const\s+|let\s+|var\s+)/, '').trim().replace(/=$/, '').trim()
+    if (name != '') {
+      return `I_${name}`
+    } else {
+      return 'interfaceBuilder'
+    }
+
   }
 
   private deconstruct(model: Model, parentName: string) {
