@@ -13,7 +13,7 @@ export class Parser {
     return this.flatModelList;
   }
   private testInterfaceName(model: string):string {
-    let name = model.substring(0,model.indexOf('{')).replace(/(const\s+|let\s+|var\s+)/, '').trim().replace(/=$/, '').trim()
+    let name = model.substring(0,model.indexOf('{')).trim().replace(/=$/, '').trim().split(' ').pop()?.trim()
     if (name != '') {
       return `I_${name}`
     } else {
