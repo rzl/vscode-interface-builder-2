@@ -21,6 +21,9 @@ export function interfaceExportBuilder(text: string, name: string):string {
                 let a = b.match(/export\s+function\s+(.+)/)
                 if (a) {
                     let str = a[1].trim().replace(/{/, '').trim()
+                    if (str.match(/\)$/)) {
+                        str += ': any'
+                    }
                     //console.log(str)
                     return str
                 }

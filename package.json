@@ -2,7 +2,7 @@
 	"name": "interface-builder-2",
 	"displayName": "Interface builder 2 for Typescript",
 	"description": "Defines interface of object, Defines interface of export function",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"publisher": "rzl",
 	"icon": "images/logo.png",
 	"engines": {
