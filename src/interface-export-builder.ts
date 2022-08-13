@@ -16,7 +16,7 @@ export function interfaceExportBuilder(text: string, name: string):string {
                     str = 'any'
                 }
                 //console.log(`${key}:${str}`)
-                return `${key}:${str}`
+                return `${key}: ${str}`
             } else {
                 let a = b.match(/export\s+function\s+(.+)/)
                 if (a) {
